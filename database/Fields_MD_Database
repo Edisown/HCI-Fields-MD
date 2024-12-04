@@ -1,0 +1,126 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               8.0.30 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.1.0.6537
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+-- Dumping data for table healthcare_system.babies: ~6 rows (approximately)
+INSERT INTO `babies` (`id`, `user_id`, `name`, `date_of_birth`, `gender`, `height`, `weight`, `allergies`, `blood_type`, `diseases`, `heart_rate`, `body_temperature`, `bmi`, `dietary_preferences`, `dietary_recommendations`, `photo_path`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'Sophia', '2023-10-01', 'Female', 75.50, 9.80, 'None', 'A+', 'None', '120', 37.2, 16.50, 'Breastfeeding', 'Ensure proper nutrition and hydration.', 'Baby1.png', '2024-12-03 04:04:58', '2024-12-03 04:04:58'),
+	(2, 1, 'Liam', '2024-05-01', 'Male', 66.00, 7.50, 'None', 'B+', 'None', '120', 37.0, 17.30, 'Introduction to Solids (if baby shows readiness)', 'Start with single-grain cereals (e.g., rice or oat cereal mixed with breast milk/formula). Pureed vegetables (carrots, peas) and fruits (bananas, apples). Introduce one new food every 3–5 days to monitor for allergies.', 'Baby1.png', '2024-12-03 04:04:58', '2024-12-03 04:04:58'),
+	(3, 1, 'Sophia', '2023-10-01', 'Female', 75.50, 9.80, 'None', 'A+', 'None', '120', 37.2, 16.50, 'Breastfeeding', 'Ensure proper nutrition and hydration.', 'Baby1.png', '2024-12-03 21:52:02', '2024-12-03 21:52:02'),
+	(4, 1, 'Liam', '2024-05-01', 'Male', 66.00, 7.50, 'None', 'B+', 'None', '120', 37.0, 17.30, 'Introduction to Solids (if baby shows readiness)', 'Start with single-grain cereals (e.g., rice or oat cereal mixed with breast milk/formula). Pureed vegetables (carrots, peas) and fruits (bananas, apples). Introduce one new food every 3–5 days to monitor for allergies.', 'Baby1.png', '2024-12-03 21:52:02', '2024-12-03 21:52:02'),
+	(5, 2, 'Mia', '2022-06-15', 'Female', 85.00, 12.00, 'Peanuts', 'O-', 'None', '110', 36.8, 16.50, 'Vegetarian Diet', 'Ensure balanced vegetarian meals, with a focus on protein and iron-rich foods.', 'Baby1.png', '2024-12-03 21:52:02', '2024-12-03 21:52:02'),
+	(6, 2, 'Noah', '2023-03-10', 'Male', 73.00, 9.00, 'None', 'AB+', 'None', '115', 37.1, 18.00, 'Breastfeeding with small portions of pureed foods.', 'Introduce mashed potatoes, pureed vegetables, and small amounts of fruit as Noah starts to wean.', 'Baby1.png', '2024-12-03 21:52:02', '2024-12-03 21:52:02');
+
+-- Dumping data for table healthcare_system.cache: ~0 rows (approximately)
+
+-- Dumping data for table healthcare_system.cache_locks: ~0 rows (approximately)
+
+-- Dumping data for table healthcare_system.failed_jobs: ~0 rows (approximately)
+
+-- Dumping data for table healthcare_system.jobs: ~0 rows (approximately)
+
+-- Dumping data for table healthcare_system.job_batches: ~0 rows (approximately)
+
+-- Dumping data for table healthcare_system.migrations: ~10 rows (approximately)
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+	(1, '0001_01_01_000000_create_users_table', 1),
+	(2, '0001_01_01_000001_create_cache_table', 1),
+	(3, '0001_01_01_000002_create_jobs_table', 1),
+	(4, '2024_11_01_015407_add_two_factor_columns_to_users_table', 1),
+	(5, '2024_11_01_015442_create_personal_access_tokens_table', 1),
+	(6, '2024_11_24_011358_create_babies_table', 1),
+	(7, '2024_11_25_184929_add_user_id_to_sessions_table', 1),
+	(8, '2024_11_29_122912_create_prescriptions_table', 1),
+	(9, '2024_11_29_123303_create_vaccination_histories_table', 1),
+	(10, '2024_11_29_124006_create_vaccination_schedules_table', 1);
+
+-- Dumping data for table healthcare_system.password_reset_tokens: ~0 rows (approximately)
+
+-- Dumping data for table healthcare_system.personal_access_tokens: ~0 rows (approximately)
+
+-- Dumping data for table healthcare_system.prescriptions: ~14 rows (approximately)
+INSERT INTO `prescriptions` (`id`, `baby_id`, `medical_drug`, `purpose`, `instructions`, `duration`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'Paracetamol', 'Fever Reduction', 'Take 5ml every 4-6 hours for 3 days.', '3 days', '2024-12-03 04:04:58', '2024-12-03 04:04:58'),
+	(2, 1, 'Amoxicillin', 'Antibiotic for infection', 'Take 10ml twice daily for 7 days.', '7 days', '2024-12-03 04:04:58', '2024-12-03 04:04:58'),
+	(3, 1, 'Salbutamol Inhaler', 'Asthma Treatment', 'Inhale 2 puffs every 6 hours as needed.', 'As needed', '2024-12-03 04:04:58', '2024-12-03 04:04:58'),
+	(4, 2, 'Ibuprofen', 'Pain Relief', '5ml every 8 hours for 5 days.', '5 days', '2024-12-03 04:04:58', '2024-12-03 04:04:58'),
+	(5, 2, 'Cetirizine', 'Allergy Relief', '2.5ml once daily for 10 days.', '10 days', '2024-12-03 04:04:58', '2024-12-03 04:04:58'),
+	(6, 1, 'Paracetamol', 'Fever Reduction', 'Take 5ml every 4-6 hours for 3 days.', '3 days', '2024-12-03 21:52:02', '2024-12-03 21:52:02'),
+	(7, 1, 'Amoxicillin', 'Antibiotic for infection', 'Take 10ml twice daily for 7 days.', '7 days', '2024-12-03 21:52:02', '2024-12-03 21:52:02'),
+	(8, 1, 'Salbutamol Inhaler', 'Asthma Treatment', 'Inhale 2 puffs every 6 hours as needed.', 'As needed', '2024-12-03 21:52:02', '2024-12-03 21:52:02'),
+	(9, 2, 'Ibuprofen', 'Pain Relief', '5ml every 8 hours for 5 days.', '5 days', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(10, 2, 'Cetirizine', 'Allergy Relief', '2.5ml once daily for 10 days.', '10 days', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(11, 5, 'Paracetamol', 'Pain and Fever Relief', '5ml every 6 hours as needed.', 'As needed', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(12, 5, 'Omeprazole', 'Gastric Reflux', '10mg once daily before breakfast for 7 days.', '7 days', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(13, 6, 'Paracetamol', 'Pain and Fever Relief', '5ml every 6 hours for 3 days.', '3 days', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(14, 6, 'Salbutamol Inhaler', 'Asthma Treatment', '1 puff every 4 hours as needed.', 'As needed', '2024-12-03 21:52:03', '2024-12-03 21:52:03');
+
+-- Dumping data for table healthcare_system.sessions: ~2 rows (approximately)
+INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
+	('Kg9GGyL0AnWI4PZi8chP5eSv909WoAgCKeIJlKEr', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaVBpTFVBSWQxM0tWV1B4Skc5MUtZYWFKcXlaRmxOeHFxTlFLeUI4QyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fX0=', 1733229138),
+	('nKWO0Lsvp0DsX1yygqWxqLo6JK25oX2on0ZbI3Jz', 2245506, '127.0.0.1', 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoicTFSWFRxd2w3TVloaFQ3eWFNbTd1a2s3dndIV29Vc0w1aFJRVXVISiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9iYWJ5ZGV0YWlscy81Ijt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO3M6NzoiMjI0NTUwNiI7czoyMToicGFzc3dvcmRfaGFzaF9zYW5jdHVtIjtzOjYwOiIkMnkkMTIkLmlsam5IWnVXclJuay82RnFON3AuT1VOeXpjbndJVzc2LkxNeEgwcWEzQi9HL0R0WExaMVMiO30=', 1733294561);
+
+-- Dumping data for table healthcare_system.users: ~2 rows (approximately)
+INSERT INTO `users` (`id`, `id_number`, `name`, `phone_number`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `remember_token`, `created_at`, `updated_at`) VALUES
+	(1, '2245504', 'Irene', NULL, NULL, '$2y$12$Lp1YvwuegkGdFNHfs4zXm.AFfErqXhlMd.m/72sAhTSDmgnZLMQU6', NULL, NULL, NULL, NULL, '2024-12-03 04:04:25', '2024-12-03 04:04:25'),
+	(2, '2245506', 'Edison', NULL, NULL, '$2y$12$.iljnHZuWrRnk/6FqN7p.OUNyzcnwIW76.LMxH0qa3B/G/DtXLZ1S', NULL, NULL, NULL, NULL, '2024-12-03 21:51:18', '2024-12-03 21:51:18');
+
+-- Dumping data for table healthcare_system.vaccination_histories: ~18 rows (approximately)
+INSERT INTO `vaccination_histories` (`id`, `baby_id`, `pediatrician_name`, `program_name`, `status`, `vaccination_date`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'Dr. Irene Holton', 'Influenza (Flu)', 'Done', '2023-04-01', '2024-12-03 04:04:58', '2024-12-03 04:04:58'),
+	(2, 1, 'Dr. Kim Dokja', 'Yellow Fever', 'Rescheduled', '2023-05-10', '2024-12-03 04:04:58', '2024-12-03 04:04:58'),
+	(3, 1, 'Dr. Airen Parreira', 'Diphtheria', 'Cancelled', '2023-06-15', '2024-12-03 04:04:58', '2024-12-03 04:04:58'),
+	(4, 2, 'Dr. Angela Yu', 'Rotavirus', 'Done', '2023-09-15', '2024-12-03 04:04:59', '2024-12-03 04:04:59'),
+	(5, 2, 'Dr. John Doe', 'Hepatitis B', 'Done', '2023-10-10', '2024-12-03 04:04:59', '2024-12-03 04:04:59'),
+	(6, 2, 'Dr. Kate Winslet', 'Pneumococcal Conjugate', 'Cancelled', '2023-11-20', '2024-12-03 04:04:59', '2024-12-03 04:04:59'),
+	(7, 1, 'Dr. Irene Holton', 'Influenza (Flu)', 'Done', '2023-04-01', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(8, 1, 'Dr. Kim Dokja', 'Yellow Fever', 'Rescheduled', '2023-05-10', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(9, 1, 'Dr. Airen Parreira', 'Diphtheria', 'Cancelled', '2023-06-15', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(10, 2, 'Dr. Angela Yu', 'Rotavirus', 'Done', '2023-09-15', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(11, 2, 'Dr. John Doe', 'Hepatitis B', 'Done', '2023-10-10', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(12, 2, 'Dr. Kate Winslet', 'Pneumococcal Conjugate', 'Cancelled', '2023-11-20', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(13, 5, 'Dr. Mia Lee', 'Polio Vaccine', 'Done', '2023-05-01', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(14, 5, 'Dr. Sarah Smith', 'Hepatitis B', 'Done', '2023-06-15', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(15, 5, 'Dr. William Brown', 'Diphtheria', 'Rescheduled', '2023-07-20', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(16, 6, 'Dr. Emily White', 'Rotavirus', 'Done', '2023-08-01', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(17, 6, 'Dr. James Wilson', 'Hepatitis A', 'Done', '2023-09-15', '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(18, 6, 'Dr. Jennifer Green', 'Pneumococcal Conjugate', 'Rescheduled', '2023-10-25', '2024-12-03 21:52:03', '2024-12-03 21:52:03');
+
+-- Dumping data for table healthcare_system.vaccination_schedules: ~18 rows (approximately)
+INSERT INTO `vaccination_schedules` (`id`, `vaccination_schedule_name`, `vaccination_schedule_date`, `baby_id`, `created_at`, `updated_at`) VALUES
+	(1, 'Diphtheria', '2024-05-01', 1, '2024-12-03 04:04:59', '2024-12-03 04:04:59'),
+	(2, 'Polio Vaccine', '2024-06-01', 1, '2024-12-03 04:04:59', '2024-12-03 04:04:59'),
+	(3, 'Influenza (Flu)', '2024-06-01', 1, '2024-12-03 04:04:59', '2024-12-03 04:04:59'),
+	(4, 'MMR (Measles, Mumps, Rubella)', '2024-01-10', 2, '2024-12-03 04:04:59', '2024-12-03 04:04:59'),
+	(5, 'Chickenpox (Varicella)', '2024-03-20', 2, '2024-12-03 04:04:59', '2024-12-03 04:04:59'),
+	(6, 'Polio Booster', '2024-05-15', 2, '2024-12-03 04:04:59', '2024-12-03 04:04:59'),
+	(7, 'Diphtheria', '2024-05-01', 1, '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(8, 'Polio Vaccine', '2024-06-01', 1, '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(9, 'Influenza (Flu)', '2024-06-01', 1, '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(10, 'MMR (Measles, Mumps, Rubella)', '2024-01-10', 2, '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(11, 'Chickenpox (Varicella)', '2024-03-20', 2, '2024-12-03 21:52:03', '2024-12-03 21:52:03'),
+	(12, 'Polio Booster', '2024-05-15', 2, '2024-12-03 21:52:04', '2024-12-03 21:52:04'),
+	(13, 'Hepatitis A', '2024-01-15', 5, '2024-12-03 21:52:04', '2024-12-03 21:52:04'),
+	(14, 'Rotavirus', '2024-02-10', 5, '2024-12-03 21:52:04', '2024-12-03 21:52:04'),
+	(15, 'Pneumococcal Conjugate', '2024-04-10', 5, '2024-12-03 21:52:04', '2024-12-03 21:52:04'),
+	(16, 'Hepatitis B', '2024-01-20', 6, '2024-12-03 21:52:04', '2024-12-03 21:52:04'),
+	(17, 'Polio Vaccine', '2024-03-05', 6, '2024-12-03 21:52:04', '2024-12-03 21:52:04'),
+	(18, 'Diphtheria', '2024-05-25', 6, '2024-12-03 21:52:04', '2024-12-03 21:52:04');
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
